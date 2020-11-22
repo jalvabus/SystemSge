@@ -1,0 +1,128 @@
+<?php include "Logueado.php"; ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>System Sge v1.0</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/SystemSge/img/logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Custom fonts for this template-->
+  <link href="/SystemSge/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/SystemSge/css/sb-admin-2.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <?php include(dirname(__DIR__) . '/component/inicio/SideBar.php'); ?>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <?php include(dirname(__DIR__) . '/component/inicio/TopBar.php'); ?>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Afiliado Eliminado</h1>
+          </div>
+
+          <!-- Row -->
+          <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col-xl-12 col-sm-12">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-secondary">Actualiza tu Información</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <?php
+                  include "../ConexionRegister.php";
+                  if (isset($_POST['idd']) && !empty($_POST['idd'])) {
+                    $resultado = $_POST['idd'];
+                    $qry1 = "Delete from personas where id_persona='" . $_POST["idd"] . "'";
+
+                    if ($mysqli->query($qry1)) {
+                      echo "<div class='alert alert-success' id='success-alert'> <button type='button' class='close' data-dismiss='alert'>x</button> <strong>Afiliado Depurado con !ÉXITO¡.</strong><br><strong><a href='../inicio.php'>Regresar</a></strong> </div> ";
+                    } else {
+                      echo "<div class='alert alert-danger' id='success-alert'> <button type='button' class='close' data-dismiss='alert'>x</button> <strong>Ocurrio un Error al Actualizar intenta mas tarde. </strong>' </div> ";
+                    }
+                  }
+
+                  ?>
+                </div>
+              </div>
+            </div>
+            <!-- Area Chart End -->
+
+          </div>
+          <!-- Row End -->
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <?php include(dirname(__DIR__) . '/component/global/Footer.php'); ?>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <?php include(dirname(__DIR__) . '/component/global/ScrollTopButton.php'); ?>
+
+  <!-- Logout Modal-->
+  <?php include(dirname(__DIR__) . '/component/global/LogoutModal.php'); ?>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/SystemSge/vendor/jquery/jquery.min.js"></script>
+  <script src="/SystemSge/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/SystemSge/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/SystemSge/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/SystemSge/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/SystemSge/js/demo/chart-area-demo.js"></script>
+  <script src="/SystemSge/js/demo/chart-pie-demo.js"></script>
+
+</body>
+
+</html>

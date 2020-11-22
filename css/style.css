@@ -1,0 +1,49 @@
+:root {
+    --primary: #181818;
+    --light: #ffffff;
+    --grey: 3efefef;
+}
+
+body {
+    overflow: hidden;
+    font-family: "Muli, sans-serif";
+    font-weight: 300;
+    color: var(--primary);
+}
+
+a.hover{
+    text-decoration: none;
+}
+
+.bg-primary { background-color: var(--primary); }
+
+
+#sidebar-container{
+    min-height: 100vh;
+}
+
+#sidebar-container .logo{
+    padding: .875rem 1.25rem;
+}
+
+#sidebar-container .menu{
+    width: 18rem;
+}
+
+.btn-search{
+    right: 5px;
+}
+
+img {
+border: 2px solid grey;
+margin: 0;
+padding: 0;
+border-radius: 500px;
+overflow: hidden;
+width: 45px;
+height: 35px;
+}
+
+.redondo img {
+border: 2px solid grey;
+}
